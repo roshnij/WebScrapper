@@ -40,4 +40,6 @@ export_csv(tableInfo, 'table_information.csv')
 dataScrape().then((tableData) => {
     console.log(tableData); 
     exportToCSV(tableData);
+}, function(err) {
+    console.log("Error: " + err); // Error:
 });
