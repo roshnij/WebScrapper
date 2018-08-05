@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <div class='container'>
+        <p>Hello</p>
+        <p>World</p>
+        <p>!!!</p>
+    </div>
+    <button onclick="paraSelection()">Select</button>
+    <script>
+    function paraSelection() {
+        const arr = Array.from(document.querySelectorAll("p"));
+        arr[1].style.backgroundColor = "yellow";
+    }
+    </script>
+    </body>
+</html>
