@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            function paraSelection() {
+                $.ajax({
+                    url:'http://www.google.com',
+                    type:'get',
+                    crossDomain: true,
+                    dataType: 'html',
+                    success: function(data){
+                        let res = $(data).find('form input');
+                        //console.log(res);
+                        //console.log(res[2].getAttribute('title'));
+                        $('#content').html(res[2].getAttribute('title'));
+                    }
+                });
+        }
+            
+        
+            </script>
+    </head>
+    <body>
+		<div id="content"></div>
+        <button onclick="paraSelection()">Select</button>
+    </body>
+</html>
