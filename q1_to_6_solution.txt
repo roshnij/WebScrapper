@@ -7,10 +7,12 @@ b) var data = document.querySelectorAll('input.gsfi')[0].value;
 c) var newdata = data + 'robot';
 d) document.querySelectorAll('input.gsfi')[0].value = newdata;
 
-Q5.
+Q5. // thisone need to ask ishita
 document.getElementsByName('btnK')[0].click();
-document.querySelectorAll('#tsf > div.tsf-p > div.jsb > center > input[type="submit"]:nth-child(1)')[0];
+document.querySelector('#tsf > div.tsf-p > div.jsb > center > input[type="submit"]:nth-child(1)');
 
 Q6.
 a) var linklist = document.querySelectorAll('.C8nzq.JTuIPc');
 b) for (var i in alist){if((Math.round(i) == i)){console.log(i);console.log(alist[i].getAttribute('href'));}}
+
+
