@@ -11,11 +11,11 @@ let dataScrape = async () => {
     await page.keyboard.type('datatables', {delay: 100}); // Types slower, like a user
     await page.keyboard.press('Enter');
     await page.waitFor(1000);
-    await page.click('#rso > div:nth-child(1) > div > div > div > div > h3 > a')
+    await page.click('#rso > div:nth-child(1) > div > div > div > div > h3 > a'); // to click the first link of the result
     await page.waitFor(1000);
     
     const response  = await page.evaluate(() => {
-        const rowHead = Array.from(document.querySelectorAll('#example > thead > tr > th'))
+        const rowHead = Array.from(document.querySelectorAll('#example > thead > tr > th'));
         const header = (rowHead.map((cellHead) => cellHead.innerHTML));
         const rows = Array.from(document.querySelectorAll('#example > tbody > tr')); // #example > tbody > tr:nth-child(2)
         const tdata = [];
@@ -27,14 +27,14 @@ let dataScrape = async () => {
             }
             tdata.push(colsData);
         }); 
-        return tdata;
+        return tdata; // return the whole array of objects with col data as object properties
     });
     await browser.close();
     return response;
 };
 
 const exportToCSV = (tableInfo) => {
-export_csv(tableInfo, 'table_information.csv')
+	export_csv(tableInfo, 'table_information.csv') 
 };
   
 dataScrape().then((tableData) => {
