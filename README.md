@@ -1,12 +1,11 @@
 # WebScrapper
 ## Web scraping using puppeteer
 
+### To install dependencies
+ > Run npm start
+
 ### For main assignment:
- 1. Install puppeteer
-    > **npm install --save puppeteer**
- 2. Install export-csv
-    > **npm install --save export-csv**
- 3. Run  
+ Run  
     > **node webScrapper_test.js**
 
 ### For Q1 to Q6:
@@ -19,7 +18,5 @@
   > Run **node q8.js**
 
 ### For Q9:
-  1. Install nightmare
-   > **npm install --save nightmare**
-  2. Run 
+   Run 
   > **node q9.js**
