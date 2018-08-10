@@ -1,5 +1,6 @@
 const Nightmare = require('nightmare');
 const nightmare = Nightmare({show: true});
+
 class Work{
     f1(param) {
          return new Promise((resolve,reject) =>{
@@ -25,6 +26,7 @@ class Work{
     fetch(){
 
     }
+
     success(message){
         return message;
     }

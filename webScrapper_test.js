@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer');
 const export_csv = require('export-csv');
 
-
 const dataScrape = async () => {
     // Actual Scraping goes Here...
     const browser = await puppeteer.launch({headless: false});
@@ -18,8 +17,7 @@ const dataScrape = async () => {
             const links = Array.from(document.querySelectorAll('#rso > div > div > div > div > div > h3 > a'));
             const linkshref = (links.map((link) => link.getAttribute('href')));
             const tableLink = linkshref.find((h) => h == 'https://datatables.net/');
-            return tableLink;
-            
+            return tableLink; 
         });
     } finally {
         await browser.close();
@@ -51,11 +49,10 @@ const dataTableScrape = async (tlink) => {
         await browser.close();
     }
     return response;
-    
 };
 
 const exportToCSV = (tableInfo) => {
-    export_csv(tableInfo, 'table_information.csv')
+    export_csv(tableInfo, 'table_information.csv');
 };
   
 dataScrape().then((link) => {

@@ -1,5 +1,6 @@
 const Nightmare = require('nightmare');
 const nightmare = Nightmare({show: true}); // to see automation visually
+
 nightmare
     .goto('https://www.google.com')
     .insert('#lst-ib', 'W3Schools')
