@@ -1,12 +1,14 @@
+const Nightmare = require('nightmare');
+const nightmare = Nightmare({show: true});
 class Work{
-    f1(nightmare) {
+    f1(param) {
          return new Promise((resolve,reject) =>{
             if (nightmare) {
-                resolve(nightmare + " Got the ouput!");
-              }
-              else {
+                resolve(param + " Got the ouput!");
+            }
+            else {
                 reject(Error("Failed!!!"));
-              }
+            }
          });         
     }
     
@@ -29,14 +31,14 @@ class Work{
 }
 
 const obj1 =  new Work();
-obj1.f1(obj1.login("PromiseVille")).then((data) => {
+obj1.f1(obj1.login(nightmare)).then((data) => {
     console.log("outer: " + data);
-    obj1.f1(obj1.statement(data)).then((innerdata) => {
+    obj1.f1(obj1.statement(nightmare)).then((innerdata) => {
         console.log("inner: " + obj1.success(innerdata));
         return obj1.success(innerdata);
     }, function(err) {
         console.log("Error: " + err); // Error:
     }); 
-}, function(err) {
+}, (err) => {
     console.log("Error: " + err); // Error:
 });
