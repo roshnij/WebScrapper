@@ -1,0 +1,25 @@
+{
+  "name": "hubdoc",
+  "version": "1.0.0",
+  "description": "Skill assessment",
+  "main": "q8.js",
+  "scripts": {
+    "start": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roshnij/WebScrapper.git"
+  },
+  "author": "Roshni Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roshnij/WebScrapper/issues"
+  },
+  "dependencies": {
+    "export-csv": "^1.0.1",
+    "nightmare": "^3.0.1",
+    "puppeteer": "^1.6.2"
+  },
+  "homepage": "https://github.com/roshnij/WebScrapper#readme"
+}
