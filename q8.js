@@ -38,7 +38,7 @@ obj1.f1(obj1.login(nightmare)).then((data) => {
     obj1.f1(obj1.statement(nightmare)).then((innerdata) => {
         console.log("inner: " + obj1.success(innerdata));
         return obj1.success(innerdata);
-    }, function(err) {
+    }, (err) => {
         console.log("Error: " + err); // Error:
     }); 
 }, (err) => {

@@ -14,9 +14,9 @@ document.querySelector('#tsf > div.tsf-p > div.jsb > center > input[type="submit
 
 Q6.
 a) var linklist = document.querySelectorAll('.C8nzq.JTuIPc');
-b) for (var i in alist){
+b) for (var i in linklist){
     if((Math.round(i) == i)){
-        console.log(alist[i].getAttribute('href'));
+        console.log(linklist[i].getAttribute('href'));
     }
    }
 

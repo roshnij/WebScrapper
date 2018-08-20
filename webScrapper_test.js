@@ -39,7 +39,6 @@ const dataTableScrape = async (tlink) => {
             const rowHead = Array.from(document.querySelectorAll('#example > thead > tr > th'))
             const header = (rowHead.map((cellHead) => cellHead.innerHTML));
             const rows = Array.from(document.querySelectorAll('#example > tbody > tr')); // #example > tbody > tr:nth-child(2)
-            const tdata = [];
             return rows.map((row) => {
                 const columns = Array.from(row.querySelectorAll('td'));
                 return columns.map((column) => column.innerHTML);
@@ -55,14 +54,28 @@ const exportToCSV = (tableInfo) => {
     export_csv(tableInfo, 'table_information.csv');
 };
   
-dataScrape().then((link) => {
-    console.log(link); 
-    dataTableScrape(link).then((tableData) => {
-        console.log(tableData); 
+// dataScrape().then((link) => {
+//     console.log(link); 
+//     dataTableScrape(link).then((tableData) => {
+//         console.log(tableData); 
+//         exportToCSV(tableData);
+//     }, (err) => {
+//         console.log("Error: " + err); // Error:
+//     });
+// }, (err) => {
+//     console.log("Error: " + err); // Error:
+// });
+
+
+// second way for line 58-68 code
+(async() => {
+    try{
+        const link = await dataScrape();
+        const tableData = await dataTableScrape(link);
         exportToCSV(tableData);
-    }, (err) => {
+    }
+    catch(err){
         console.log("Error: " + err); // Error:
-    });
-}, (err) => {
-    console.log("Error: " + err); // Error:
-});
+    }
+})();
+
